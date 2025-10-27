@@ -7,7 +7,7 @@
   <echo>Various masking techniques for sensitive data</echo>
   
   <!-- Import customer data and mask it -->
-  <iterate type="Customer" source="data/sample-customers.csv" 
+  <iterate type="Customer" source="../data/sample-customers.csv" 
            consumer="new CSVEntityExporter('output/customers-masked.csv'),ConsoleExporter">
     
     <!-- Keep ID unchanged -->

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <setup>
+<!-- <setup defaultSeed="12345"> -->
   <import domains="person" platforms="csv"/>
   
   <!-- Define CSV exporter -->
