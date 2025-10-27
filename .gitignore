@@ -1,0 +1,30 @@
+# Generated output files
+benerator/output/*.csv
+benerator/output/*.xml
+benerator/output/*.xls
+benerator/output/*.fcw
+datamimic/examples-output/*.csv
+
+# Python
+datamimic/venv/
+datamimic/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+benerator/benerator.log
+

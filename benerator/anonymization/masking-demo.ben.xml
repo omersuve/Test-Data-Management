@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+  <import platforms="csv"/>
+  
+  <echo>Data Masking Demo</echo>
+  <echo>=================</echo>
+  <echo>Various masking techniques for sensitive data</echo>
+  
+  <!-- Import customer data and mask it -->
+  <iterate type="Customer" source="data/sample-customers.csv" 
+           consumer="new CSVEntityExporter('output/customers-masked.csv'),ConsoleExporter">
+    
+    <!-- Keep ID unchanged -->
+    <attribute name="id" script="this.id"/>
+    
+    <!-- Mask: Replace all characters with asterisks -->
+    <attribute name="name" converter="Mask"/>
+    
+    <!-- MiddleMask: Show first 2 and last 2 chars, mask the middle -->
+    <attribute name="email" converter="new MiddleMask(2,2)"/>
+    
+    <!-- Keep age but convert to a range -->
+    <variable name="age_num" script="Integer.parseInt(this.age)"/>
+    <attribute name="age" script="(Math.floor(age_num / 10) * 10) + '-' + ((Math.floor(age_num / 10) * 10) + 9)"/>
+    
+    <!-- Hash: Convert country to hash -->
+    <attribute name="country" converter="SHA256Hash"/>
+    
+    <!-- Add masked fields -->
+    <attribute name="registration_date" script="this.registration_date"/>
+    <attribute name="ssn_masked" constant="***-**-****"/>
+    <attribute name="credit_card_masked" constant="****-****-****-1234"/>
+    
+  </iterate>
+  
+  <echo>✓ Masked sensitive customer data</echo>
+  <echo>  - Name: fully masked</echo>
+  <echo>  - Email: middle masked</echo>
+  <echo>  - Age: converted to range</echo>
+  <echo>  - Country: hashed</echo>
+</setup>
+

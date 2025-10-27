@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+  <import domains="person" class="com.rapiddweller.benerator.distribution.function.*" platforms="csv"/>
+  
+  <echo>Realistic Data Patterns Demo</echo>
+  <echo>============================</echo>
+  <echo>Combining distributions for realistic scenarios</echo>
+  
+  <!-- E-commerce customer simulation -->
+  <generate type="EcomCustomer" count="200" consumer="new CSVEntityExporter('output/realistic-customers.csv'),ConsoleExporter">
+    
+    <variable name="person" generator="new PersonGenerator()"/>
+    
+    <id name="customer_id" type="long" generator="IncrementalIdGenerator"/>
+    
+    <attribute name="name" script="person.givenName + ' ' + person.familyName"/>
+    
+    <!-- Age: Normal distribution around 35 -->
+    <attribute name="age" type="int" min="18" max="75" distribution="new GaussianFunction(35, 12)"/>
+    
+    <!-- Account balance: Exponential (most have low, few have high) -->
+    <attribute name="balance" type="double" min="0" max="10000" granularity="0.01" 
+               distribution="new ExponentialFunction(0.3)"/>
+    
+    <!-- Order count: Most customers order 1-3 times, few order frequently -->
+    <attribute name="order_count" type="int" min="1" max="50" 
+               distribution="new ExponentialFunction(0.5)"/>
+    
+    <!-- Customer tier: Weighted (80% bronze, 15% silver, 4% gold, 1% platinum) -->
+    <attribute name="tier" values="'bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','silver','silver','silver','gold'"/>
+    
+    <!-- Loyalty points: Cumulated distribution -->
+    <attribute name="loyalty_points" type="int" min="0" max="10000" distribution="cumulated"/>
+    
+    <!-- Last purchase: Recent dates more likely -->
+    <attribute name="last_purchase_days_ago" type="int" min="1" max="365" 
+               distribution="new ExponentialFunction(0.02)"/>
+    
+    <!-- Response rate to marketing: Bell curve -->
+    <attribute name="email_response_pct" type="int" min="0" max="100" 
+               distribution="new GaussianFunction(25, 15)"/>
+    
+  </generate>
+  
+  <echo>✓ Generated 200 realistic e-commerce customers</echo>
+  <echo>  - Age: Normal distribution (avg 35)</echo>
+  <echo>  - Balance: Exponential (most low, few high)</echo>
+  <echo>  - Orders: Exponential (most 1-3, few many)</echo>
+  <echo>  - Tier: Discrete weights (80/15/4/1)</echo>
+  <echo>  - Loyalty: Bell curve</echo>
+</setup>
+

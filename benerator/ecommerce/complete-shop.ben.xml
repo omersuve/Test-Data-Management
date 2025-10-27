@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+  <import domains="person,address,product" platforms="csv" 
+          class="com.rapiddweller.benerator.distribution.function.*"/>
+  
+  <echo>Complete E-Commerce Shop Demo</echo>
+  <echo>==============================</echo>
+  <echo>Generating a complete e-commerce dataset</echo>
+  
+  <!-- Step 1: Generate Products -->
+  <echo>Step 1/4: Generating products...</echo>
+  <generate type="Product" count="20" consumer="new CSVEntityExporter('output/ecom-products.csv')">
+    <id name="product_id" type="long" generator="IncrementalIdGenerator"/>
+    <attribute name="sku" pattern="[A-Z]{3}-[0-9]{6}" unique="true"/>
+    <attribute name="name" pattern="[A-Z][a-z]{8,20}"/>
+    <attribute name="category" values="'Electronics','Electronics','Electronics','Electronics','Electronics','Furniture','Furniture','Furniture','Appliances','Appliances','Appliances','Books','Books','Books','Books','Clothing','Clothing','Clothing','Sports','Sports'"/>
+    <attribute name="price" type="double" min="9.99" max="999.99" granularity="0.01" 
+               distribution="new ExponentialFunction(0.3)"/>
+    <attribute name="cost" script="(this.price * 0.6).doubleValue()"/>
+    <attribute name="stock" type="int" min="0" max="500" distribution="cumulated"/>
+    <attribute name="rating" type="double" min="1.0" max="5.0" granularity="0.1" 
+               distribution="new GaussianFunction(4.0, 0.8)"/>
+    <attribute name="reviews_count" type="int" min="0" max="500" 
+               distribution="new ExponentialFunction(0.5)"/>
+  </generate>
+  
+  <!-- Step 2: Generate Customers -->
+  <echo>Step 2/4: Generating customers...</echo>
+  <generate type="Customer" count="50" consumer="new CSVEntityExporter('output/ecom-customers.csv')">
+    <variable name="person" generator="new PersonGenerator()"/>
+    <variable name="addr" generator="AddressGenerator"/>
+    
+    <id name="customer_id" type="long" generator="IncrementalIdGenerator"/>
+    <attribute name="first_name" script="person.givenName"/>
+    <attribute name="last_name" script="person.familyName"/>
+    <attribute name="email" script="person.email"/>
+    <attribute name="phone" pattern="\+1-[2-9][0-9]{2}-[0-9]{3}-[0-9]{4}"/>
+    
+    <attribute name="street" script="addr.street"/>
+    <attribute name="house_number" script="addr.houseNumber"/>
+    <attribute name="city" script="addr.city"/>
+    <attribute name="state" script="addr.state"/>
+    <attribute name="zip" script="addr.postalCode"/>
+    
+    <attribute name="age" type="int" min="18" max="75" distribution="new GaussianFunction(35, 12)"/>
+    <attribute name="member_since" generator="DateGenerator" min="2020-01-01" max="2024-12-31"/>
+    <attribute name="tier" values="'bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','bronze','silver','silver','silver','silver','gold','platinum'"/>
+    <attribute name="loyalty_points" type="int" min="0" max="10000" distribution="cumulated"/>
+  </generate>
+  
+  <!-- Step 3: Generate Orders -->
+  <echo>Step 3/4: Generating orders...</echo>
+  <generate type="Order" count="100" consumer="new CSVEntityExporter('output/ecom-orders.csv')">
+    <id name="order_id" type="long" generator="IncrementalIdGenerator"/>
+    <attribute name="customer_id" type="long" min="1" max="50" distribution="new ExponentialFunction(0.01)"/>
+    <attribute name="order_date" generator="DateGenerator" min="2024-01-01" max="2024-12-31"/>
+    <attribute name="status" values="'pending','processing','processing','shipped','shipped','shipped','delivered','delivered','delivered','delivered','delivered','delivered','delivered','delivered','delivered','delivered','delivered','delivered','delivered','cancelled'"/>
+    <attribute name="payment_method" values="'credit_card','credit_card','credit_card','credit_card','credit_card','credit_card','credit_card','credit_card','credit_card','credit_card','debit_card','debit_card','debit_card','debit_card','debit_card','paypal','paypal','paypal','paypal','bank_transfer'"/>
+    <attribute name="subtotal" type="double" min="10.00" max="2000.00" granularity="0.01" 
+               distribution="new ExponentialFunction(0.005)"/>
+    <attribute name="tax" script="(this.subtotal * 0.08).doubleValue()"/>
+    <attribute name="shipping" type="double" values="0,5.99,5.99,5.99,5.99,5.99,9.99,9.99,9.99,14.99"/>
+    <attribute name="total" script="this.subtotal + this.tax + this.shipping"/>
+  </generate>
+  
+  <!-- Step 4: Generate Order Items -->
+  <echo>Step 4/4: Generating order items...</echo>
+  <generate type="OrderItem" count="200" consumer="new CSVEntityExporter('output/ecom-order-items.csv')">
+    <id name="item_id" type="long" generator="IncrementalIdGenerator"/>
+    <attribute name="order_id" type="long" min="1" max="100" distribution="random"/>
+    <attribute name="product_id" type="long" min="1" max="20" 
+               distribution="new ExponentialFunction(0.05)"/>
+    <attribute name="quantity" type="int" min="1" max="5" distribution="cumulated"/>
+    <attribute name="unit_price" type="double" min="9.99" max="999.99" granularity="0.01"/>
+    <attribute name="discount_pct" type="double" min="0" max="0.20" distribution="random"/>
+    <attribute name="line_total" script="this.quantity * this.unit_price * (1 - this.discount_pct)"/>
+  </generate>
+  
+  <echo></echo>
+  <echo>✓ Complete e-commerce dataset generated!</echo>
+  <echo>  - 20 products</echo>
+  <echo>  - 50 customers</echo>
+  <echo>  - 100 orders</echo>
+  <echo>  - 200 order items</echo>
+  <echo></echo>
+  <echo>Files created in output/ directory:</echo>
+  <echo>  - ecom-products.csv</echo>
+  <echo>  - ecom-customers.csv</echo>
+  <echo>  - ecom-orders.csv</echo>
+  <echo>  - ecom-order-items.csv</echo>
+</setup>
+

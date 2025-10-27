@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+  <import domains="person" platforms="csv"/>
+  
+  <!-- Define CSV exporter -->
+  <bean id="csv_out" class="CSVEntityExporter">
+    <property name="uri" value="output/simple-people.csv"/>
+  </bean>
+  
+  <!-- Generate 10 people and export to CSV -->
+  <generate type="Person" count="10" consumer="csv_out">
+    <variable name="person" generator="new PersonGenerator()"/>
+    
+    <attribute name="first_name" script="person.givenName"/>
+    <attribute name="last_name" script="person.familyName"/>
+    <attribute name="email" script="person.email"/>
+    <attribute name="age" type="int" min="18" max="75"/>
+  </generate>
+  
+  <echo>✓ Generated 10 people to output/simple-people.csv</echo>
+</setup>
+

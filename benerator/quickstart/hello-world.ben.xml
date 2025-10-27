@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+  <!-- Simplest possible Benerator example -->
+  <echo>Hello from Benerator!</echo>
+  
+  <!-- Generate 5 simple messages -->
+  <generate type="Message" count="5" consumer="ConsoleExporter">
+    <attribute name="text" constant="Hello World!"/>
+    <attribute name="number" type="int" min="1" max="100"/>
+  </generate>
+</setup>
+
