@@ -5,7 +5,7 @@
   
   <!-- Define CSV exporter -->
   <bean id="csv_out" class="CSVEntityExporter">
-    <property name="uri" value="output/simple-products.csv"/>
+    <property name="uri" value="../output/simple-products.csv"/>
   </bean>
   
   <!-- Generate 10 products and export to CSV -->

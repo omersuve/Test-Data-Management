@@ -2,29 +2,43 @@
 
 > Comprehensive examples for **Benerator** (XML/Java) and **DataMimic** (Python) test data generators.
 
-**Total Examples:** 8 files (4 Benerator + 4 DataMimic)
+**Total Examples:** 12 demos (6 Benerator + 6 DataMimic)
 
 ---
 
 ## 🚀 Quick Start
 
-### Benerator Examples
+### Run All Demos (Master Script)
 
 ```bash
-cd benerator/quickstart
-benerator hello-world.ben.xml
-benerator simple-csv-export.ben.xml
+./RUN-ALL-DEMOS.sh
+# Interactive - runs all 12 demos with pauses between each
 ```
 
-### DataMimic Examples
+### Individual Demo Scripts
+
+All individual demo scripts are organized in the `demos/` directory:
+
+**Benerator:**
 
 ```bash
-cd datamimic
-source venv/bin/activate  # Important!
+./demos/benerator-person.sh       # Generate people
+./demos/benerator-product.sh      # Generate products
+./demos/benerator-company.sh      # Generate companies
+./demos/benerator-distributions.sh # Statistical patterns
+./demos/benerator-anonymization.sh # Data masking
+./demos/benerator-ecommerce.sh    # Complete e-commerce
+```
 
-cd quickstart
-python hello-world.py
-python with-seed.py
+**DataMimic:**
+
+```bash
+./demos/datamimic-basic-patient.sh    # Generate patients
+./demos/datamimic-account.sh          # Generate bank accounts
+./demos/datamimic-doctor.sh           # Generate doctors
+./demos/datamimic-deterministic.sh    # Seed-based reproducibility
+./demos/datamimic-age-appropriate.sh  # Domain intelligence
+./demos/datamimic-hospital.sh         # Complete hospital system
 ```
 
 ---
@@ -33,99 +47,122 @@ python with-seed.py
 
 ```
 TDM/
-├── benerator/              # XML-based test data generation
-│   ├── quickstart/         # Hello world, CSV export
-│   │   ├── hello-world.ben.xml
-│   │   └── simple-csv-export.ben.xml
-│   ├── anonymization/      # Data masking demo
-│   │   └── masking-demo.ben.xml
-│   ├── ecommerce/          # Complete shop with relationships
-│   │   └── complete-shop.ben.xml
-│   ├── data/               # Input files for anonymization
-│   └── output/             # Generated files (git ignored)
+├── RUN-ALL-DEMOS.sh           # Master script - runs all demos
+├── demos/                     # Individual demo scripts (12 total)
+│   ├── benerator-*.sh         # Benerator demos (6)
+│   └── datamimic-*.sh         # DataMimic demos (6)
 │
-└── datamimic/              # Python-based test data generation
-    ├── quickstart/         # Hello world, deterministic
-    │   ├── hello-world.py
-    │   └── with-seed.py
-    ├── healthcare/         # Age-appropriate patient data
+├── benerator/                 # XML-based test data generation
+│   ├── quickstart/            # Basic examples
+│   │   ├── simple-csv-person.ben.xml
+│   │   ├── simple-csv-product.ben.xml
+│   │   └── simple-csv-company.ben.xml
+│   ├── anonymization/         # Data masking
+│   │   └── masking-demo.ben.xml
+│   ├── distributions/         # Statistical patterns
+│   │   └── realistic-patterns.ben.xml
+│   ├── ecommerce/             # Complete shop
+│   │   └── complete-shop.ben.xml
+│   ├── data/                  # Input files
+│   └── output/                # Generated files (git ignored)
+│
+└── datamimic/                 # Python-based test data generation
+    ├── quickstart/            # Basic examples
+    │   ├── basic-patient.py
+    │   ├── basic-account.py
+    │   └── basic-doctor.py
+    ├── healthcare/            # Domain-specific
     │   ├── constrained-demographics.py
+    │   ├── deterministic.py
     │   └── complete-hospital.py
-    ├── venv/               # Virtual environment (git ignored)
-    ├── examples-output/    # Generated files (git ignored)
-    └── requirements.txt
+    ├── venv/                  # Virtual environment (git ignored)
+    └── examples-output/       # Generated files (git ignored)
 ```
 
 ---
 
-## 🎯 Highlights
+## 🎯 Demo Flow
 
-### 🔵 Benerator (XML-based, Java)
+### 🔵 Benerator Demos (6 total)
 
-**1. Hello World** - Console output, basic XML syntax
+**1. Person Generation** - Pattern-based CSV export
 
 ```bash
-cd benerator/quickstart
-benerator hello-world.ben.xml
+./demo-benerator-person.sh
 ```
 
-**2. CSV Export + Deterministic** - Same seed = same data
+**2. Product Generation** - Pattern-based product data
 
 ```bash
-benerator simple-csv-export.ben.xml
-# Run twice - identical results!
+./demo-benerator-product.sh
 ```
 
-**3. Data Anonymization** - GDPR-compliant masking
+**3. Company Generation** - Organization data with revenue
 
 ```bash
-cd ../anonymization
-benerator masking-demo.ben.xml
-# Input: data/sample-customers.csv
-# Output: output/customers-masked.csv
+./demo-benerator-company.sh
 ```
 
-**4. Complete E-commerce** - Relationships & distributions
+**4. Statistical Distributions** - Gaussian, Exponential, Weighted
 
 ```bash
-cd ../ecommerce
-benerator complete-shop.ben.xml
-# Generates: 20 products, 50 customers, 100 orders, 200 items
+./demo-benerator-distributions.sh
+```
+
+**5. Data Anonymization** - GDPR-compliant masking
+
+```bash
+./demo-benerator-anonymization.sh
+# Input: data/sample-customers.csv → Masked output
+```
+
+**6. Complete E-commerce** - Relational data (products→orders→items)
+
+```bash
+./demo-benerator-ecommerce.sh
 ```
 
 ---
 
-### 🟢 DataMimic (Python-based)
+### 🟢 DataMimic Demos (6 total)
 
-**1. Hello World** - Domain-specific patient data
+**1. Patient Generation** - Domain-specific healthcare data
 
 ```bash
-cd datamimic/quickstart
-python hello-world.py
+./demo-datamimic-basic-patient.sh
 ```
 
-**2. Deterministic** - Seed-based reproducibility
+**2. Bank Account Generation** - Finance domain
 
 ```bash
-python with-seed.py
-# Run twice - identical patients!
+./demo-datamimic-account.sh
 ```
 
-**3. Age-Appropriate Conditions** - Domain intelligence
+**3. Doctor Generation** - Healthcare professionals
 
 ```bash
-cd ../healthcare
-python constrained-demographics.py
+./demo-datamimic-doctor.sh
+```
+
+**4. Deterministic Generation** - Seed-based reproducibility
+
+```bash
+./demo-datamimic-deterministic.sh
+# Run twice → identical output!
+```
+
+**5. Age-Appropriate Data** - Domain intelligence
+
+```bash
+./demo-datamimic-age-appropriate.sh
 # 70-year-olds: Hypertension, Diabetes
-# 25-year-olds: Healthy
-# No nonsense data!
+# 25-year-olds: Healthy (no nonsense data!)
 ```
 
-**4. Complete Hospital** - Relationships like e-commerce
+**6. Complete Hospital** - Relational system (doctors→patients→appointments)
 
 ```bash
-python complete-hospital.py
-# Generates: 20 doctors, 100 patients, 150 appointments
+./demo-datamimic-hospital.sh
 ```
 
 ---

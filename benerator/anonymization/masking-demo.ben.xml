@@ -9,7 +9,7 @@
   
   <!-- Import customer data and mask it -->
   <iterate type="Customer" source="../data/sample-customers.csv" 
-           consumer="new CSVEntityExporter('output/customers-masked.csv'),ConsoleExporter">
+           consumer="new CSVEntityExporter('../output/customers-masked.csv'),ConsoleExporter">
     
     <!-- Keep ID unchanged -->
     <attribute name="id" script="this.id"/>

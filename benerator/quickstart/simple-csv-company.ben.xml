@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+    <bean id="csv_out" class="CSVEntityExporter">
+        <property name="uri" value="../output/simple-companies.csv"/>
+        <property name="separator" value=","/>
+    </bean>
+
+    <generate type="Company" count="10" consumer="csv_out">
+        <attribute name="name" pattern="[A-Z][a-z]{4,8} (Inc|Corp|LLC|Ltd)"/>
+        <attribute name="industry" values="'Technology','Finance','Healthcare','Retail','Manufacturing'"/>
+        <attribute name="employee_count" type="int" min="10" max="5000"/>
+        <attribute name="founded_year" type="int" min="1980" max="2024"/>
+        <attribute name="revenue" type="double" min="100000" max="50000000" granularity="1000"/>
+    </generate>
+
+    <echo>[OK] Generated 10 companies to output/simple-companies.csv</echo>
+</setup>
+

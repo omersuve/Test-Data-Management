@@ -3,7 +3,7 @@ benerator/output/*.csv
 benerator/output/*.xml
 benerator/output/*.xls
 benerator/output/*.fcw
-datamimic/examples-output/*.csv
+datamimic/output/*.csv
 
 # Python
 datamimic/venv/
@@ -26,5 +26,6 @@ Thumbs.db
 
 # Logs
 *.log
+benerator.log
 benerator/benerator.log
 

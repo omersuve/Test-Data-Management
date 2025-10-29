@@ -8,7 +8,7 @@
   <echo>Combining distributions for realistic scenarios</echo>
   
   <!-- E-commerce customer simulation -->
-  <generate type="EcomCustomer" count="200" consumer="new CSVEntityExporter('output/realistic-customers.csv')">
+  <generate type="EcomCustomer" count="200" consumer="new CSVEntityExporter('../output/realistic-customers.csv')">
     
     <variable name="person" generator="new PersonGenerator()"/>
     

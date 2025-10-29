@@ -12,7 +12,7 @@ print("Complete Hospital System Demo")
 print("=" * 80)
 
 # Ensure output directory exists
-output_dir = os.path.join(os.path.dirname(__file__), '..', 'examples-output')
+output_dir = os.path.join(os.path.dirname(__file__), '..', 'output')
 os.makedirs(output_dir, exist_ok=True)
 
 # Step 1: Generate Doctors
@@ -105,7 +105,7 @@ print(f"  - {len(doctors)} doctors across {len(specialties)} specialties")
 print(f"  - {len(patients)} patients with age-appropriate conditions")
 print(f"  - {len(appointments)} appointments (relationships)")
 print()
-print("Files created in examples-output/ directory:")
+print("Files created in output/ directory:")
 print("  - hospital-doctors.csv")
 print("  - hospital-patients.csv")
 print("  - hospital-appointments.csv")

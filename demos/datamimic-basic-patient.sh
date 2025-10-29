@@ -6,7 +6,7 @@ echo "DATAMIMIC: Basic Patient Generation"
 echo "========================================="
 echo ""
 
-cd "$(dirname "$0")/datamimic"
+cd "$(dirname "$0")/../datamimic"
 source venv/bin/activate
 
 cd quickstart

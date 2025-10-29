@@ -10,7 +10,7 @@
   
   <!-- Step 1: Generate Products -->
   <echo>Step 1/4: Generating products...</echo>
-  <generate type="Product" count="20" consumer="new CSVEntityExporter('output/ecom-products.csv')">
+  <generate type="Product" count="20" consumer="new CSVEntityExporter('../output/ecom-products.csv')">
     <id name="product_id" type="long" generator="IncrementalIdGenerator"/>
     <attribute name="sku" pattern="[A-Z]{3}-[0-9]{6}" unique="true"/>
     <attribute name="name" pattern="[A-Z][a-z]{8,20}"/>
@@ -27,7 +27,7 @@
   
   <!-- Step 2: Generate Customers -->
   <echo>Step 2/4: Generating customers...</echo>
-  <generate type="Customer" count="50" consumer="new CSVEntityExporter('output/ecom-customers.csv')">
+  <generate type="Customer" count="50" consumer="new CSVEntityExporter('../output/ecom-customers.csv')">
     <variable name="person" generator="new PersonGenerator()"/>
     <variable name="addr" generator="AddressGenerator"/>
     
@@ -51,7 +51,7 @@
   
   <!-- Step 3: Generate Orders -->
   <echo>Step 3/4: Generating orders...</echo>
-  <generate type="Order" count="100" consumer="new CSVEntityExporter('output/ecom-orders.csv')">
+  <generate type="Order" count="100" consumer="new CSVEntityExporter('../output/ecom-orders.csv')">
     <id name="order_id" type="long" generator="IncrementalIdGenerator"/>
     <attribute name="customer_id" type="long" min="1" max="50" distribution="new ExponentialFunction(0.01)"/>
     <attribute name="order_date" generator="DateGenerator" min="2024-01-01" max="2024-12-31"/>
@@ -66,7 +66,7 @@
   
   <!-- Step 4: Generate Order Items -->
   <echo>Step 4/4: Generating order items...</echo>
-  <generate type="OrderItem" count="200" consumer="new CSVEntityExporter('output/ecom-order-items.csv')">
+  <generate type="OrderItem" count="200" consumer="new CSVEntityExporter('../output/ecom-order-items.csv')">
     <id name="item_id" type="long" generator="IncrementalIdGenerator"/>
     <attribute name="order_id" type="long" min="1" max="100" distribution="random"/>
     <attribute name="product_id" type="long" min="1" max="20" 

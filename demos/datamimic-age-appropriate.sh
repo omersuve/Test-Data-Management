@@ -8,7 +8,7 @@ echo "Domain Intelligence Example"
 echo "========================================="
 echo ""
 
-cd "$(dirname "$0")/datamimic"
+cd "$(dirname "$0")/../datamimic"
 source venv/bin/activate
 
 cd healthcare

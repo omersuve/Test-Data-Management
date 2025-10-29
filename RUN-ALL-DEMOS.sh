@@ -8,7 +8,7 @@ echo "║       Benerator vs DataMimic                               ║"
 echo "║                                                            ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
-echo "This will run all 10 demos in sequence."
+echo "This will run all 12 demos in sequence."
 echo "Press ENTER after each demo to continue..."
 echo ""
 
@@ -23,27 +23,32 @@ echo ""
 read -p "Press ENTER to start..."
 
 echo ""
-./demo-benerator-person.sh
+./demos/benerator-person.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-benerator-product.sh
+./demos/benerator-product.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-benerator-distributions.sh
+./demos/benerator-company.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-benerator-anonymization.sh
+./demos/benerator-distributions.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-benerator-ecommerce.sh
+./demos/benerator-anonymization.sh
+echo ""
+read -p "Press ENTER for next demo..."
+
+echo ""
+./demos/benerator-ecommerce.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
@@ -56,27 +61,32 @@ echo ""
 read -p "Press ENTER to continue..."
 
 echo ""
-./demo-datamimic-basic-patient.sh
+./demos/datamimic-basic-patient.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-datamimic-account.sh
+./demos/datamimic-account.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-datamimic-deterministic.sh
+./demos/datamimic-doctor.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-datamimic-age-appropriate.sh
+./demos/datamimic-deterministic.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
 echo ""
-./demo-datamimic-hospital.sh
+./demos/datamimic-age-appropriate.sh
+echo ""
+read -p "Press ENTER for next demo..."
+
+echo ""
+./demos/datamimic-hospital.sh
 echo ""
 
 echo ""
