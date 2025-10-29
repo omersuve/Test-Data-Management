@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup>
+  <setting name="defaultSeed" value="54321"/>
+  <import domains="product" platforms="csv"/>
+  
+  <!-- Define CSV exporter -->
+  <bean id="csv_out" class="CSVEntityExporter">
+    <property name="uri" value="output/simple-products.csv"/>
+  </bean>
+  
+  <!-- Generate 10 products and export to CSV -->
+  <generate type="Product" count="10" consumer="csv_out">
+    <attribute name="name" pattern="[A-Z][a-z]{5,12}"/>
+    <attribute name="category" values="'Electronics','Furniture','Clothing','Books','Sports'"/>
+    <attribute name="price" type="double" min="9.99" max="499.99" granularity="0.01"/>
+    <attribute name="stock" type="int" min="0" max="100"/>
+    <attribute name="rating" type="double" min="1.0" max="5.0" granularity="0.1"/>
+  </generate>
+  
+  <echo>[OK] Generated 10 products to output/simple-products.csv</echo>
+</setup>
+

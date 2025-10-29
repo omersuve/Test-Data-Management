@@ -8,7 +8,7 @@ echo "║       Benerator vs DataMimic                               ║"
 echo "║                                                            ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
-echo "This will run all 6 demos in sequence."
+echo "This will run all 10 demos in sequence."
 echo "Press ENTER after each demo to continue..."
 echo ""
 
@@ -23,7 +23,12 @@ echo ""
 read -p "Press ENTER to start..."
 
 echo ""
-./demo-benerator-csv-export.sh
+./demo-benerator-person.sh
+echo ""
+read -p "Press ENTER for next demo..."
+
+echo ""
+./demo-benerator-product.sh
 echo ""
 read -p "Press ENTER for next demo..."
 
@@ -52,6 +57,11 @@ read -p "Press ENTER to continue..."
 
 echo ""
 ./demo-datamimic-basic-patient.sh
+echo ""
+read -p "Press ENTER for next demo..."
+
+echo ""
+./demo-datamimic-account.sh
 echo ""
 read -p "Press ENTER for next demo..."
 

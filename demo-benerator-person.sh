@@ -1,8 +1,8 @@
 #!/bin/bash
-# Benerator Demo 1: CSV Export
+# Benerator Demo 1: Person CSV Export
 
 echo "========================================="
-echo "BENERATOR: CSV Export"
+echo "BENERATOR: Person CSV Export"
 echo "========================================="
 echo ""
 
@@ -10,11 +10,12 @@ cd "$(dirname "$0")/benerator/quickstart"
 
 echo "Generating 10 people to CSV..."
 rm -f output/simple-people.csv
-benerator simple-csv-export.ben.xml
+benerator simple-csv-person.ben.xml 2>/dev/null
 echo ""
 echo "Generated CSV file:"
 cat output/simple-people.csv
 
 echo ""
-echo "[RESULT] XML-based data generation exported to CSV"
+echo "[RESULT] Person data with names, emails, and ages."
+echo ""
 
