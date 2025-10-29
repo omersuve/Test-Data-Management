@@ -9,7 +9,7 @@ from datamimic_ce.domains.healthcare.services import PatientService
 service = PatientService()
 patient = service.generate()
 
-print(f"👋 Hello! I'm {patient.full_name}")
-print(f"👤 Age: {patient.age}")
-print(f"🩺 Blood Type: {patient.blood_type}")
-print(f"📋 Conditions: {patient.conditions}")
+print(f"Name: {patient.full_name}")
+print(f"Age: {patient.age}")
+print(f"Blood Type: {patient.blood_type}")
+print(f"Conditions: {patient.conditions}")

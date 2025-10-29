@@ -8,7 +8,7 @@ import os
 from random import Random
 from datamimic_ce.domains.healthcare.services import PatientService, DoctorService
 
-print("🏥 Complete Hospital System Demo")
+print("Complete Hospital System Demo")
 print("=" * 80)
 
 # Ensure output directory exists
@@ -37,7 +37,7 @@ with open(doctors_file, 'w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=['doctor_id', 'full_name', 'specialty', 'years_experience'])
     writer.writeheader()
     writer.writerows(doctors)
-print(f"✓ Generated {len(doctors)} doctors")
+print(f"[OK] Generated {len(doctors)} doctors")
 
 # Step 2: Generate Patients with assigned doctors
 print("\nStep 2/3: Generating patients...")
@@ -64,7 +64,7 @@ with open(patients_file, 'w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=['patient_id', 'full_name', 'age', 'blood_type', 'conditions', 'assigned_doctor_id'])
     writer.writeheader()
     writer.writerows(patients)
-print(f"✓ Generated {len(patients)} patients")
+print(f"[OK] Generated {len(patients)} patients")
 
 # Step 3: Generate Appointments (relationships)
 print("\nStep 3/3: Generating appointments...")
@@ -97,10 +97,10 @@ with open(appointments_file, 'w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=['appointment_id', 'patient_id', 'doctor_id', 'date', 'type', 'status'])
     writer.writeheader()
     writer.writerows(appointments)
-print(f"✓ Generated {len(appointments)} appointments")
+print(f"[OK] Generated {len(appointments)} appointments")
 
 print("\n" + "=" * 80)
-print("✓ Complete hospital system generated!")
+print("[OK] Complete hospital system generated!")
 print(f"  - {len(doctors)} doctors across {len(specialties)} specialties")
 print(f"  - {len(patients)} patients with age-appropriate conditions")
 print(f"  - {len(appointments)} appointments (relationships)")

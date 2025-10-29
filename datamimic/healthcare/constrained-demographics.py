@@ -7,7 +7,7 @@ from random import Random
 from datamimic_ce.domains.common.models.demographic_config import DemographicConfig
 from datamimic_ce.domains.healthcare.services import PatientService
 
-print("👴 Senior Patients (Age 70-75)\n")
+print("Senior Patients (Age 70-75)\n")
 print("-" * 70)
 
 # Configure for senior patients
@@ -23,7 +23,7 @@ for i in range(3):
     print(f"{patient.full_name:25} | Age: {patient.age} | {patient.conditions}")
 
 print("\n" + "=" * 70)
-print("\n👶 Pediatric Patients (Age 0-12)\n")
+print("\nPediatric Patients (Age 0-12)\n")
 print("-" * 70)
 
 # Configure for pediatric patients

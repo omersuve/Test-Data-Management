@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <setup>
-<!-- <setup defaultSeed="12345"> -->
   <import domains="person" platforms="csv"/>
   
   <!-- Define CSV exporter -->
@@ -18,6 +17,6 @@
     <attribute name="age" type="int" min="18" max="75"/>
   </generate>
   
-  <echo>✓ Generated 10 people to output/simple-people.csv</echo>
+  <echo>[OK] Generated 10 people to output/simple-people.csv</echo>
 </setup>
 

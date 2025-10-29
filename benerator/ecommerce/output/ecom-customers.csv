@@ -1,0 +1,51 @@
+customer_id,first_name,last_name,email,phone,street,house_number,city,state,zip,age,member_since,tier,loyalty_points
+1,Ülkü,Kaplan,ukaplan@hotmail.com,+1-965-239-2925,Değirmendere,30,Kuzgun,Kahramanmaraş,46400,39,2023-09-13T00:00:00,bronze,5653
+2,Taskin,Aksu,taksu@mybot.net,+1-622-166-3167,Danabaşlar,33,Şanli,Mardin,47700,34,2021-11-05T00:00:00,bronze,4164
+3,Munire,Demir,munire_demir@msn.com,+1-865-616-0790,Daripinari,1,Devletkuşu,Diyarbakir,21950,32,2024-04-29T00:00:00,silver,5759
+4,Rengin,Seven,rengin.seven@elinea.com,+1-932-599-5673,Beşocak,16,Boztepe,Çorum,19300,20,2021-06-16T00:00:00,silver,5648
+5,Ertan,Çelik,ertan_celik@hotmail.com,+1-372-678-6468,Yazlik,33,Ballica,Zonguldak,67300,26,2020-01-14T00:00:00,platinum,5591
+6,Sacide,Mirza,sacide.mirza@lealon.fr,+1-280-501-8483,Çalik,50,Kuşakli,Hatay,31500,60,2024-05-24T00:00:00,bronze,6554
+7,Mehmet,Tevetoğlu,mehmet_tevetoğlu@vcwfvtikinl.us,+1-636-150-1525,Çöğürlü,7,Muratli,Uşak,64500,39,2024-02-03T00:00:00,bronze,5927
+8,Bikem,Polat,bikem.polat@microsoft.com,+1-259-762-4338,Uzunköy,22,Kümbet,Bingöl,12900,32,2022-11-17T00:00:00,bronze,5809
+9,Direnç,Şener,direncsener@hkxhotfff.de,+1-213-529-3887,Gedik,28,Meyvali,Balikesir,10443,18,2024-12-01T00:00:00,bronze,6208
+10,Yekta,Şahin,yekta_sahin@ymdrfwttpu.net,+1-412-114-5203,Kabakulak,1,Yayikli,Diyarbakir,21600,43,2020-12-16T00:00:00,gold,3017
+11,Cennet,Kader,ckader@xmupc.ch,+1-402-192-5516,Kervansaray,14,Osmaniye,Kirklareli,39200,34,2020-10-07T00:00:00,bronze,4613
+12,Birol,Gül,bguel@phwnlguehpuu.de,+1-986-868-2693,Yeşilpinar,8,Ayan,Tokat,60500,46,2023-06-26T00:00:00,bronze,5055
+13,Avni,Akin,avni_akin@argun-baykal.de,+1-278-168-2918,Mimliket,19,Karakaya,Antalya,07600,39,2024-06-01T00:00:00,bronze,7658
+14,Tugba,Mirza,tugbamirza@hotmail.com,+1-880-516-2042,Sütçü İmam,26,Bostanci,Artvin,08890,18,2024-12-09T00:00:00,bronze,3647
+15,Gülhan,Aybar,gaybar@escion.com,+1-696-650-6627,Ömerli,39,Kavakdere,Sivas,58500,61,2023-07-21T00:00:00,bronze,6367
+16,Sehnaz,Aksu,saksu@jvq.com,+1-753-348-6729,Yeşilova,40,Hasirci,Samsun,55760,21,2021-07-24T00:00:00,silver,3354
+17,Ilkin,Gömeç,ilkingoemec@ates-baig.org,+1-518-179-4301,Busaket,32,Buğdayli,Karaman,70500,28,2021-06-19T00:00:00,bronze,6079
+18,Kadir,Baykal,kbaykal@brsgyclqxql.com,+1-423-858-2062,Doğan Yuvasi,9,Yayladami,Malatya,44400,33,2024-04-26T00:00:00,bronze,3606
+19,Nisan,Baig,nisan_baig@wdsiozjcuttf.net,+1-663-751-7540,Yeni,8,Alay,Niğde,51010,39,2022-03-19T00:00:00,silver,4497
+20,Meriç,Ateş,mericates@abdullah-yiğit.com,+1-909-057-6319,Dere,32,Merdivenli,İzmir,35980,50,2023-01-01T00:00:00,bronze,5490
+21,Sevki,Kaya,sevkikaya@gmx.net,+1-695-881-5927,Atatürk,26,Yaylatepesi,Çankiri,18320,37,2022-06-27T00:00:00,silver,5417
+22,Cemil,Muhtar,cemil.muhtar@rgbztr.de,+1-924-834-4582,Namazgah,30,Gedik,Aydin,09800,50,2024-09-21T00:00:00,bronze,4755
+23,Nurten,Ortaç,nurten_ortac@elvan-kırca.edu,+1-410-270-5852,Küşlü,21,Yilanli,Muş,49600,35,2020-07-01T00:00:00,silver,3466
+24,Aygül,Demir,ayguel.demir@sfdn.com,+1-894-516-4486,Dernek,15,Esenpinar,Kirikkale,71900,40,2024-10-17T00:00:00,platinum,7129
+25,Gülen,Pekkan,gpekkan@hotmail.com,+1-570-519-6544,Yukarierhaci,21,Çukurova,Trabzon,61830,52,2024-01-12T00:00:00,bronze,5293
+26,Müserref,Muhtar,mmuhtar@grknxkwckl.net,+1-977-588-7341,Saraçlar,17,Canlar,Kastamonu,37940,21,2023-09-09T00:00:00,platinum,4848
+27,Arslan,Kurt,arslan.kurt@microsoft.com,+1-763-200-2650,Kizilsaray,29,Dereköy,Afyonkarahisar,03600,35,2021-06-24T00:00:00,gold,5069
+28,Öykü,Kaplan,oeykuekaplan@esfctlyfjz.de,+1-428-881-7891,Kirikali,4,Kocapinar,Balikesir,10900,60,2020-01-08T00:00:00,bronze,6063
+29,Izzettin,Emanetoğlu,izzettin.emanetoğlu@luetfue-emanetoğlu.com,+1-658-376-5710,Bahşiş,46,Oysu,Kütahya,43800,19,2022-03-30T00:00:00,bronze,4539
+30,Aysu,Demir,aysu_demir@nfh.net,+1-634-315-3425,Darsofa,11,Terzihüyük,Hatay,31500,36,2023-10-06T00:00:00,bronze,5438
+31,Kumsal,Şahin,kumsal.sahin@yahoo.com,+1-728-491-4957,Paşaköy Alti,6,Çelikalan,Samsun,55700,18,2024-09-19T00:00:00,bronze,3978
+32,Hürriyet,Demir,huerriyet.demir@gmx.com,+1-890-330-5866,Ali Kuşçu,43,Çiftçibaşi,Şanliurfa,63600,39,2023-07-13T00:00:00,bronze,5483
+33,Mutlu,Şahin,mutlu_sahin@ewvuhmhfiz.net,+1-949-955-0576,Yeşilyurt,13,Obuz,Elaziğ,23350,21,2021-05-18T00:00:00,bronze,5158
+34,Ünseli,Erbil,uenseli.erbil@gmx.de,+1-202-810-9979,Şifli Kirik,25,Sökmen,Kütahya,43270,49,2024-06-28T00:00:00,bronze,5907
+35,Taygun,Şener,taygun_sener@yahoo.com,+1-751-785-7883,Kir,5,Dolusalkim,Siirt,56700,37,2023-01-16T00:00:00,bronze,4999
+36,Berrak,Polat,berrakpolat@hotmail.com,+1-536-679-8327,Pinarköy,31,Pasli,Kars,36700,32,2023-11-30T00:00:00,bronze,5262
+37,Havva,Kırca,havva.kırca@freecom.org,+1-935-264-7345,Yaylayaka,12,Argincik,Kayseri,38110,32,2022-06-11T00:00:00,bronze,4104
+38,Teoman,Mansur,tmansur@faik-baig.org,+1-679-351-0881,Sadiroğlu,11,Ardahan,,99860,21,2024-10-29T00:00:00,platinum,2856
+39,Asil,Yiğit,asilyiğit@solexon.de,+1-292-994-8855,Yüzüncüyil,21,Koruköy,Kastamonu,37210,41,2021-11-07T00:00:00,platinum,4740
+40,Alper,Emir,alper.emir@hotmail.com,+1-568-819-6943,Kayi,14,Belen,Gümüşhane,29700,30,2021-03-15T00:00:00,bronze,4908
+41,Mevlut,Mirza,mevlutmirza@jcexyoilbfa.net,+1-631-605-4752,Kale,1,Marmaris,Muğla,48700,24,2024-11-05T00:00:00,bronze,4926
+42,Ata,Değirmencioğlu,atadeğirmencioğlu@hnsrgmx.com,+1-684-532-3805,Kivircik,45,Döşekkaya,Bingöl,12500,30,2023-10-03T00:00:00,silver,2303
+43,Gürel,Akin,guerel.akin@microsoft.de,+1-898-472-1012,Küçükcerit,39,Başfaki,Samsun,55900,34,2020-05-01T00:00:00,bronze,4908
+44,Asu,Kaplan,asukaplan@lanxon.net,+1-924-316-6728,Yavaşbey,36,Topardiç,Bolu,14030,48,2020-04-27T00:00:00,bronze,3939
+45,Güzide,Emir,guezide.emir@tognium.us,+1-924-231-0336,Gaziveli,22,Gümüşsuyu,Sinop,57800,39,2021-09-10T00:00:00,gold,7597
+46,Vuslat,Akin,vakin@synaxergy.de,+1-784-073-6384,Payamli,5,Huğtaş,Kahramanmaraş,46600,34,2024-05-04T00:00:00,silver,5647
+47,Bumin,Demir,bdemir@albia.com,+1-281-606-8807,Karşigeçe,36,Taraşci,Konya,42385,49,2023-06-27T00:00:00,bronze,6488
+48,Turgut,Erdoğan,turgut.erdoğan@gmx.com,+1-297-119-2494,Hasdümen,33,Akçasusurluk,Bursa,16710,42,2022-05-03T00:00:00,bronze,2500
+49,Kader,Korkmaz,kaderkorkmaz@gmx.de,+1-849-602-5866,Deryapinari,22,Kanatli,Bartin,74510,24,2020-06-03T00:00:00,bronze,6142
+50,Gülizar,Gül,gguel@cihan-aslan.de,+1-858-022-8604,Balki,33,Kösençiftliği,Edirne,22130,22,2022-02-12T00:00:00,bronze,6280

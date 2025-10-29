@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <setup>
+  <setting name="defaultSeed" value="54321"/>
   <import platforms="csv"/>
   
   <echo>Data Masking Demo</echo>
@@ -33,7 +34,7 @@
     
   </iterate>
   
-  <echo>✓ Masked sensitive customer data</echo>
+  <echo>[OK] Masked sensitive customer data</echo>
   <echo>  - Name: fully masked</echo>
   <echo>  - Email: middle masked</echo>
   <echo>  - Age: converted to range</echo>

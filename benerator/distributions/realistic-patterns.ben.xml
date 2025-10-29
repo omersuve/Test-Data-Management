@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <setup>
+  <setting name="defaultSeed" value="77777"/>
   <import domains="person" class="com.rapiddweller.benerator.distribution.function.*" platforms="csv"/>
   
   <echo>Realistic Data Patterns Demo</echo>
@@ -7,7 +8,7 @@
   <echo>Combining distributions for realistic scenarios</echo>
   
   <!-- E-commerce customer simulation -->
-  <generate type="EcomCustomer" count="200" consumer="new CSVEntityExporter('output/realistic-customers.csv'),ConsoleExporter">
+  <generate type="EcomCustomer" count="200" consumer="new CSVEntityExporter('output/realistic-customers.csv')">
     
     <variable name="person" generator="new PersonGenerator()"/>
     
@@ -42,7 +43,7 @@
     
   </generate>
   
-  <echo>✓ Generated 200 realistic e-commerce customers</echo>
+  <echo>[OK] Generated 200 realistic e-commerce customers</echo>
   <echo>  - Age: Normal distribution (avg 35)</echo>
   <echo>  - Balance: Exponential (most low, few high)</echo>
   <echo>  - Orders: Exponential (most 1-3, few many)</echo>

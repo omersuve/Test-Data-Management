@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <setup>
+  <setting name="defaultSeed" value="99999"/>
   <import domains="person,address,product" platforms="csv" 
           class="com.rapiddweller.benerator.distribution.function.*"/>
   
@@ -77,7 +78,7 @@
   </generate>
   
   <echo></echo>
-  <echo>✓ Complete e-commerce dataset generated!</echo>
+  <echo>[OK] Complete e-commerce dataset generated!</echo>
   <echo>  - 20 products</echo>
   <echo>  - 50 customers</echo>
   <echo>  - 100 orders</echo>

@@ -6,7 +6,7 @@ Running this script multiple times will produce the same results.
 from random import Random
 from datamimic_ce.domains.healthcare.services import PatientService
 
-print("🎲 Deterministic Generation (with seed):")
+print("Deterministic Generation (with seed):")
 print("Run this script multiple times - you'll get the same results!\n")
 print("-" * 70)
 
